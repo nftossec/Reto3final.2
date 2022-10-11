@@ -15,7 +15,7 @@ public class Bike implements Serializable {
     private Integer id;
     private String name;
     private String brand;
-    private Integer year;
+    private Integer years;
     private String description;
 
     @ManyToOne
@@ -37,7 +37,7 @@ public class Bike implements Serializable {
         this.id = id;
         this.name = name;
         this.brand = brand;
-        this.year = year;
+        this.years = year;
         this.description = description;
         this.category = category;
         this.messages = messages;
@@ -69,11 +69,11 @@ public class Bike implements Serializable {
     }
 
     public Integer getYear() {
-        return year;
+        return years;
     }
 
     public void setYear(Integer year) {
-        this.year = year;
+        this.years = year;
     }
 
     public String getDescription() {
