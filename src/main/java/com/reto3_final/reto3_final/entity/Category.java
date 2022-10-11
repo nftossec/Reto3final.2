@@ -22,11 +22,11 @@ public class Category implements Serializable {
 
     public Category(){}
 
-    public Category(Integer id, String name, String description, List<Bike> bike) {
+    public Category(Integer id, String name, String description, List<Bike> bikes) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.bikes = bike;
+        this.bikes = bikes;
     }
 
     public Integer getId() {
@@ -53,12 +53,12 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Bike> getBike() {
+    public List<Bike> getBikes() {
         return bikes;
     }
 
-    public void setBike(List<Bike> bike) {
-        this.bikes = bike;
+    public void setBikes(List<Bike> bikes) {
+        this.bikes = bikes;
     }
 }
 
