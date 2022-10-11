@@ -17,11 +17,11 @@ public class BikeRepository {
         return (List<Bike>) bikeCrudRepository.findAll();
     }
 
-    public Bike save(Bike bike){
-        return bikeCrudRepository.save(bike);
+    public Bike save(Bike bikes){
+        return bikeCrudRepository.save(bikes);
     }
 
-    public Optional<Bike> getBike(Integer id){
+    public Optional<Bike> getBikes(Integer id){
         return bikeCrudRepository.findById(id);
     }
 }

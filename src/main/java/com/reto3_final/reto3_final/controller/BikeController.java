@@ -22,8 +22,8 @@ public class BikeController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Bike postBike(@RequestBody Bike bike){
-        return bikeService.save(bike);
+    public Bike postBikes(@RequestBody Bike bikes){
+        return bikeService.save(bikes);
     }
 
 }
