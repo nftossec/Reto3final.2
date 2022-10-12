@@ -24,12 +24,12 @@ public class Bike implements Serializable {
     @JsonIgnoreProperties("bikes")
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")  // mappea messages
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")  //
     @JsonIgnoreProperties({"client","bikes"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")      //mappea reservations
-    @JsonIgnoreProperties({"client","bikes"})
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "bike")      //PERSIST
+    @JsonIgnoreProperties({"messages","bikes"})   //client bikes
     private List<Reservation> reservations;
 
 /*

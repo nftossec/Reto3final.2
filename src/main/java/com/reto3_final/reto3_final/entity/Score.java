@@ -10,9 +10,9 @@ import java.io.Serializable;
 public class Score implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private int score;
-    private String message;
+    private Integer id;     //idScore
+    private int score;          //stars
+    private String message;         //messageText
 
 
     @OneToOne
