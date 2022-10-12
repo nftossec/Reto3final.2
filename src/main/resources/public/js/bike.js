@@ -1,5 +1,3 @@
-const BASE_URL_BIKE = 'https://g0497c038904c6c-dbreto1.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/bike/bike';
-
 function traerInformacion(){
     $.ajax({
         url:'api/Bike/all',
@@ -9,7 +7,7 @@ function traerInformacion(){
             console.log(respuesta);
             pintarRespuesta(respuesta);
         }
-    })
+    });
 }
 
 function pintarRespuesta(items){
