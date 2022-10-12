@@ -26,4 +26,10 @@ public class MessageController {
     public Message postMessage(@RequestBody Message message){
         return messageService.save(message);
     }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message postMessage2(@RequestBody Message message){
+        return messageService.save(message);
+    }
 }
