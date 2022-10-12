@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/api/Bike")
+@RequestMapping("api/Bike")
 @CrossOrigin(origins = "*",methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class BikeController {
 
@@ -23,6 +23,12 @@ public class BikeController {
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Bike postBikes(@RequestBody Bike bikes){
+        return bikeService.save(bikes);
+    }
+
+    @PostMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Bike postBikes2(@RequestBody Bike bikes){
         return bikeService.save(bikes);
     }
 
