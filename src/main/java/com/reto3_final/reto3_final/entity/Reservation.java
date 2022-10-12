@@ -17,25 +17,28 @@ public class Reservation implements Serializable {
     private Date devolutionDate;
     private String status = "created";
 
-    /* @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "bikeId")
     @JsonIgnoreProperties("reservations")
-    private Bike bike;  */
+    private Bike bike;
 
     @ManyToOne
     @JoinColumn(name = "clientIdClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    /*
-   @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "reservation")
+
+    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "reservation")
     @JsonIgnoreProperties("reservation")
     private Score score;
-*/
-    @OneToOne(cascade = CascadeType.ALL)
-    //@JsonIgnoreProperties("reservations")
-    //@PrimaryKeyJoinColumn
+
+
+   /* @OneToOne (cascade = CascadeType.REMOVE")
+    @JsonIgnoreProperties("reservations")
+    @PrimaryKeyJoinColumn
     private Score score;
+
+    */
 
     public Reservation(){}
 
@@ -44,7 +47,7 @@ public class Reservation implements Serializable {
         this.startDate = startDate;
         this.devolutionDate = devolutionDate;
         this.status = status;
-       // this.bike = bike;
+        this.bike = bike;
         this.client = client;
         this.score = score;
     }
@@ -81,14 +84,14 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
-   /* public Bike getBike() {
+    public Bike getBike() {
         return bike;
     }
 
     public void setBike(Bike bike) {
         this.bike = bike;
     }
-*/
+
     public Client getClient() {
         return client;
     }
